@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Support — Reflections by Isla Lune</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: #fff;
+      color: #2b2b2b;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #f9e8ec;
+      padding: 2.5rem 1.5rem 2rem;
+      text-align: center;
+    }
+
+    .app-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      background: #fce8ef;
+      border: 1.5px solid #e8c8d0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      overflow: hidden;
+    }
+
+    .app-icon svg {
+      width: 44px;
+      height: 44px;
+    }
+
+    .wordmark {
+      font-family: 'Pinyon Script', cursive;
+      font-size: 2rem;
+      color: #2b2b2b;
+      line-height: 1;
+    }
+
+    .wordmark-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #b08090;
+      margin-top: 0.4rem;
+    }
+
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero h1 {
+      font-family: 'Pinyon Script', cursive;
+      font-size: clamp(2.4rem, 8vw, 3rem);
+      color: #2b2b2b;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero p {
+      font-size: 0.82rem;
+      color: #888;
+      letter-spacing: 0.04em;
+      line-height: 1.75;
+    }
+
+    .contact-btn {
+      display: block;
+      width: fit-content;
+      margin: 2rem auto;
+      background: #f2c4ce;
+      color: #2b2b2b;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      transition: background 0.25s;
+    }
+
+    .contact-btn:hover { background: #eaaab8; }
+
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #c4a0aa;
+      text-align: center;
+      margin: 2.5rem 0 1.5rem;
+    }
+
+    .faq {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #f0e0e4;
+    }
+
+    .faq-item:first-child {
+      border-top: 1px solid #f0e0e4;
+    }
+
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      color: #2b2b2b;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 0.82rem;
+      letter-spacing: 0.03em;
+      text-align: left;
+      padding: 1.2rem 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      transition: color 0.2s;
+    }
+
+    .faq-q:hover { color: #c4788a; }
+
+    .faq-q .plus {
+      color: #f2c4ce;
+      font-size: 1.3rem;
+      font-weight: 300;
+      line-height: 1;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.open .faq-q .plus { transform: rotate(45deg); }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .faq-item.open .faq-a { max-height: 400px; }
+
+    .faq-a-inner {
+      padding-bottom: 1.25rem;
+      font-size: 0.78rem;
+      color: #888;
+      line-height: 1.85;
+      letter-spacing: 0.02em;
+    }
+
+    .faq-a-inner a {
+      color: #c4788a;
+      text-decoration: none;
+      border-bottom: 1px solid #f2c4ce;
+    }
+
+    .closing {
+      margin-top: 4rem;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: #fdf5f7;
+      border-radius: 12px;
+    }
+
+    .closing p {
+      font-family: 'Pinyon Script', cursive;
+      font-size: 1.6rem;
+      color: #2b2b2b;
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+    }
+
+    .closing small {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #b08090;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: #ccc;
+      border-top: 1px solid #f5eaed;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="app-icon">
+    <!-- Book icon matching app icon style -->
+    <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="8" y="10" width="28" height="24" rx="2" fill="#fff" stroke="#d4a0b0" stroke-width="1.2"/>
+      <line x1="22" y1="10" x2="22" y2="34" stroke="#d4a0b0" stroke-width="1"/>
+      <path d="M14 18 Q18 15 22 18" stroke="#d4a0b0" stroke-width="1" fill="none"/>
+      <path d="M22 18 Q26 15 30 18" stroke="#d4a0b0" stroke-width="1" fill="none"/>
+    </svg>
+  </div>
+  <div class="wordmark">Reflections by Isla Lune</div>
+  <div class="wordmark-sub">Support</div>
+</header>
+
+<main>
+  <div class="hero">
+    <h1>We're here to help.</h1>
+    <p>Questions about the app? Reach out anytime.<br>We're a small team and truly appreciate your patience and support.</p>
+  </div>
+
+  <a class="contact-btn" href="mailto:olivia@islalune.ca">olivia@islalune.ca</a>
+
+  <div class="section-label">Common Questions</div>
+
+  <div class="faq">
+
+    <div class="faq-item">
+      <button class="faq-q">How do I create an account?<span class="plus">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Open the app and tap Sign Up. Fill out all the required fields to get started. If you run into any issues during sign up, email us at <a href="mailto:olivia@islalune.ca">olivia@islalune.ca</a> and we'll help you out.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">How do I reset my password?<span class="plus">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Once signed in, tap the Settings button in the bottom corner of your main journal page. Select My Profile — you can update your password and email address there. You'll receive an automated email to confirm the change. Make sure to check your spam folder and follow the link.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Is my data private and secure?<span class="plus">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Yes. All of your information is stored in a secure database and is not available to the public. You can view our full Privacy Policy in the Settings page of the app.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Where can I find the Terms & Conditions?<span class="plus">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Our Terms and Conditions can be found in the Settings page of the app.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">What is your refund policy?<span class="plus">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Reflections is currently a one-time purchase with no subscription. Because of this, all sales are final and we do not offer refunds at this time.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">How do I join the affiliate program?<span class="plus">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">We'd love to have you. Send us an email at <a href="mailto:olivia@islalune.ca">olivia@islalune.ca</a> and we'll share all the details.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q">Who is behind Isla Lune?<span class="plus">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Isla Lune was founded by Olivia, a 24-year-old based in Langford, British Columbia. She believes in taking back your time and allowing yourself to truly rest and recover — which is why she built this app. Because we're a solo founder run brand, it can sometimes take a little time to get back to you, but every message is read and every bit of support means the world. We're still growing, learning, and rolling out updates — thank you for being here.</div></div>
+    </div>
+
+  </div>
+
+  <div class="closing">
+    <p>Take a moment for you today.</p>
+    <small>Isla Lune Inc. &nbsp;·&nbsp; Langford, BC</small>
+  </div>
+</main>
+
+<footer>© 2026 Isla Lune Inc.</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>
